@@ -1,23 +1,18 @@
-import {  useState } from 'react';
-import Header from './components/Header/Header.jsx';
-import CoreConcepts from './components/CoreConcepts/CoreConcepts.jsx';
-import TabButton from './components/TabButton.jsx';
-import { EXAMPLES } from './data.js';
+import { useState } from 'react';
+import TabButton from '../TabButton.jsx';
+import  EXAMPLES  from '../../data.js';
 
-function App() {
-  const [ selectedTopic, setSelectedTopic ] = useState();
+const [ selectedTopic, setSelectedTopic ] = useState();
   
   function handleSelect(selectedButton) {
     // selectedButton => 'components','jsx','props','state'
     setSelectedTopic(selectedButton);
 
   }
-  return (
-    <>
-      <Header />
-      <main>
-      < CoreConcepts />
-      <section id ="examples">
+
+export default function Examples() {
+return (
+<section id ="examples">
         <h2>Examples</h2>
         <menu>
           <TabButton 
@@ -53,10 +48,5 @@ function App() {
         </div>
 }
         </section>
-      </main>
-    </>
-  );
+    )
 }
-
-export default App;
-
